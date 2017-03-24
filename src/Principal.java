@@ -157,18 +157,30 @@ public class Principal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Crea el evento del boton Nuevo
+     * @param evt 
+     */
     private void bNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNuevoActionPerformed
         Nuevo n = new Nuevo(this);
         n.setSize(400, 60);
         n.setVisible(true);
     }//GEN-LAST:event_bNuevoActionPerformed
-
+    
+    /**
+     * Crea el evento del boton Resetear
+     * @param evt 
+     */
     private void bResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bResetActionPerformed
         DefaultListModel modelo = new DefaultListModel();
         liPartidos.setModel(modelo);
         liResultados.setModel(modelo);
     }//GEN-LAST:event_bResetActionPerformed
 
+    /**
+     * Crea el evento del boton Eliminar
+     * @param evt 
+     */
     private void bEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEliminarActionPerformed
         DefaultListModel modelo = new DefaultListModel();
         int pos = liPartidos.getSelectedIndex();
@@ -182,6 +194,10 @@ public class Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_bEliminarActionPerformed
 
+    /**
+     * Crea el evento del boton Realizar quiniela
+     * @param evt 
+     */
     private void bRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRealizarActionPerformed
         DefaultListModel modelo = new DefaultListModel();
         Random aleatorio = new Random();
@@ -261,6 +277,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane spResultado;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Método que intoduce el partido en la lista Partidos
+     * @param partido String con el partido
+     */
     public void addPartido(String partido) {
         DefaultListModel modelo = new DefaultListModel();
         

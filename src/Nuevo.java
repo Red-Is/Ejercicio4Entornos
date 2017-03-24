@@ -19,6 +19,10 @@ public class Nuevo extends javax.swing.JFrame {
         initComponents();
     }
     
+    /**
+     * Constructor con parámetros
+     * @param p Ventana principal
+     */
     public Nuevo(Principal p) {
         initComponents();
         this.p = p;
@@ -57,6 +61,10 @@ public class Nuevo extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Crea el evento del boton Aceptar
+     * @param evt 
+     */
     private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
         p.addPartido(tfPartido.getText());
         tfPartido.setText("");
