@@ -6,7 +6,8 @@
 
 /**
  *
- * @author user
+ * @author Alejandro Ariza
+ * @version 1
  */
 public class Nuevo extends javax.swing.JFrame {
 

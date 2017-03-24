@@ -9,8 +9,9 @@ import javax.swing.DefaultListModel;
  */
 
 /**
- *
- * @author user
+ * 
+ * @author Alejandro Ariza
+ * @version 1
  */
 public class Principal extends javax.swing.JFrame {
 
