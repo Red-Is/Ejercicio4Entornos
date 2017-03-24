@@ -1,3 +1,7 @@
+
+import java.util.Random;
+import javax.swing.DefaultListModel;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -26,21 +30,174 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        pFuncion = new javax.swing.JPanel();
+        pPartidos = new javax.swing.JPanel();
+        spPartidos = new javax.swing.JScrollPane();
+        liPartidos = new javax.swing.JList<>();
+        pBotones = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        bNuevo = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        bEliminar = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        bRealizar = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        bReset = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        pResultados = new javax.swing.JPanel();
+        spResultado = new javax.swing.JScrollPane();
+        liResultados = new javax.swing.JList<>();
+        pTitulo = new javax.swing.JPanel();
+        pQuiniela = new javax.swing.JPanel();
+        lQuiniela = new javax.swing.JLabel();
+        pPR = new javax.swing.JPanel();
+        lPartidos = new javax.swing.JLabel();
+        lResultados = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Ejercicio 07");
+        setResizable(false);
+
+        pFuncion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pFuncion.setLayout(new java.awt.GridLayout(1, 3));
+
+        pPartidos.setLayout(new java.awt.BorderLayout());
+
+        spPartidos.setViewportView(liPartidos);
+
+        pPartidos.add(spPartidos, java.awt.BorderLayout.CENTER);
+
+        pFuncion.add(pPartidos);
+
+        pBotones.setLayout(new java.awt.BorderLayout());
+
+        jPanel6.setLayout(new java.awt.GridLayout(4, 0));
+
+        bNuevo.setText("Nuevo");
+        bNuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bNuevoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(bNuevo);
+
+        jPanel6.add(jPanel1);
+
+        bEliminar.setText("Eliminar");
+        bEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bEliminarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(bEliminar);
+
+        jPanel6.add(jPanel4);
+
+        bRealizar.setText("Realizar quiniela");
+        bRealizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bRealizarActionPerformed(evt);
+            }
+        });
+        jPanel3.add(bRealizar);
+
+        jPanel6.add(jPanel3);
+
+        bReset.setText("Resetear");
+        bReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bResetActionPerformed(evt);
+            }
+        });
+        jPanel2.add(bReset);
+
+        jPanel6.add(jPanel2);
+
+        pBotones.add(jPanel6, java.awt.BorderLayout.NORTH);
+
+        jPanel5.setLayout(new java.awt.BorderLayout());
+        pBotones.add(jPanel5, java.awt.BorderLayout.CENTER);
+
+        pFuncion.add(pBotones);
+
+        pResultados.setLayout(new java.awt.BorderLayout());
+
+        liResultados.setEnabled(false);
+        spResultado.setViewportView(liResultados);
+
+        pResultados.add(spResultado, java.awt.BorderLayout.CENTER);
+
+        pFuncion.add(pResultados);
+
+        getContentPane().add(pFuncion, java.awt.BorderLayout.CENTER);
+
+        pTitulo.setLayout(new java.awt.BorderLayout());
+
+        lQuiniela.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        lQuiniela.setForeground(new java.awt.Color(255, 51, 0));
+        lQuiniela.setText("Quiniela");
+        pQuiniela.add(lQuiniela);
+
+        pTitulo.add(pQuiniela, java.awt.BorderLayout.NORTH);
+
+        pPR.setLayout(new java.awt.BorderLayout());
+
+        lPartidos.setText("Partidos");
+        pPR.add(lPartidos, java.awt.BorderLayout.WEST);
+
+        lResultados.setText("Resultados");
+        pPR.add(lResultados, java.awt.BorderLayout.EAST);
+
+        pTitulo.add(pPR, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(pTitulo, java.awt.BorderLayout.NORTH);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNuevoActionPerformed
+        Nuevo n = new Nuevo(this);
+        n.setSize(400, 60);
+        n.setVisible(true);
+    }//GEN-LAST:event_bNuevoActionPerformed
+
+    private void bResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bResetActionPerformed
+        DefaultListModel modelo = new DefaultListModel();
+        liPartidos.setModel(modelo);
+        liResultados.setModel(modelo);
+    }//GEN-LAST:event_bResetActionPerformed
+
+    private void bEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEliminarActionPerformed
+        DefaultListModel modelo = new DefaultListModel();
+        int pos = liPartidos.getSelectedIndex();
+        
+        for (int i = 0; i < liPartidos.getModel().getSize(); i++) {
+            String ptemp = liPartidos.getModel().getElementAt(i).toString();
+            modelo.addElement(ptemp);
+        }
+        modelo.remove(pos);
+        liPartidos.setModel(modelo);
+        
+    }//GEN-LAST:event_bEliminarActionPerformed
+
+    private void bRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRealizarActionPerformed
+        DefaultListModel modelo = new DefaultListModel();
+        Random aleatorio = new Random();
+        for (int i = 0; i < liPartidos.getModel().getSize(); i++) {
+            String ptemp = liPartidos.getModel().getElementAt(i).toString() + " -> ";
+            int result = aleatorio.nextInt(3);
+            if(result == 0) {
+                ptemp += "X";
+            } else {
+                ptemp += result;
+            }
+
+            modelo.addElement(ptemp);
+        }
+        liResultados.setModel(modelo);
+    }//GEN-LAST:event_bRealizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +235,41 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bEliminar;
+    private javax.swing.JButton bNuevo;
+    private javax.swing.JButton bRealizar;
+    private javax.swing.JButton bReset;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JLabel lPartidos;
+    private javax.swing.JLabel lQuiniela;
+    private javax.swing.JLabel lResultados;
+    private javax.swing.JList<String> liPartidos;
+    private javax.swing.JList<String> liResultados;
+    private javax.swing.JPanel pBotones;
+    private javax.swing.JPanel pFuncion;
+    private javax.swing.JPanel pPR;
+    private javax.swing.JPanel pPartidos;
+    private javax.swing.JPanel pQuiniela;
+    private javax.swing.JPanel pResultados;
+    private javax.swing.JPanel pTitulo;
+    private javax.swing.JScrollPane spPartidos;
+    private javax.swing.JScrollPane spResultado;
     // End of variables declaration//GEN-END:variables
+
+    public void addPartido(String partido) {
+        DefaultListModel modelo = new DefaultListModel();
+        
+        
+        for (int i = 0; i < liPartidos.getModel().getSize(); i++) {
+            String ptemp = liPartidos.getModel().getElementAt(i).toString();
+            modelo.addElement(ptemp);
+        }
+        modelo.addElement(partido);
+        liPartidos.setModel(modelo);
+    }
 }
